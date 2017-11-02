@@ -3,10 +3,13 @@ Example of using meteor's dynamic-import package with lazy modules with meteor 1
 meteor features enables large projects to be split into separate modules that are loaded on demand. The benefit
 of this is faster load times for users and faster build times for developers.
 
+Try it out
+----------
+
 Startup the application in either dev or production mode:
 
-(dev mode)
-----------
+Development Mode
+----------------
 
  > export METEOR_PACKAGE_DIRS='../Packages'; meteor run
 
@@ -14,6 +17,7 @@ Production Mode
 ---------------
 
 > export METEOR_PACKAGE_DIRS='../Packages'; meteor run --production
+
 
 Using chrome, navigate to localhost:3000, open the developer window in chrome, select the network tab and
 then the websocket connection and then the "frames" tab.  Press the button "click to dynamically load my-ui-component",
@@ -66,3 +70,9 @@ Notes
    you will not see syntax errors until the code is requested!!  Unfortunately there doesn't appear to be a way
    to force meteor to evaluate all code like it did before.
 4) Meteor appears to cache individual source files as separate entries in IndexedDB.
+
+References
+----------
+1) [Blog on Dynamic Imports with Meteor 1.5](https://blog.meteor.com/dynamic-imports-in-meteor-1-5-c6130419c3cd)
+2) [Meteor 1.6 documentation on lazy loading modules from a package](https://docs.meteor.com/packages/modules.html#Lazy-loading-modules-from-a-package)
+3) [Meteor 1.6 documentation on dynamic-import package](https://docs.meteor.com/packages/dynamic-import.html)
