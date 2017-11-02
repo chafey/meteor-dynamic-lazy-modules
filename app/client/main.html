@@ -1,0 +1,20 @@
+<head>
+  <title>Meteor 1.6 Lazy Module Loading</title>
+</head>
+
+<body>
+  <h1>Meteor 1.6 Lazy Module Loading</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <button>Click to dynamically load my-ui-component</button>
+
+    <!-- wrap the template exported by the dynamically loaded module in a reactive if statement so it doesn't
+         get rendered until the module/template is loaded. -->
+  {{#if myUiComponentLoaded}}
+    {{> myUiComponent}}
+  {{/if}}
+
+</template>
